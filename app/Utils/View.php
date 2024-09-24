@@ -4,7 +4,12 @@ namespace App\Utils;
 
 class View
 {
+    private static $vars = [];
 
+    public static function init($vars = [])
+    {
+        self::$vars = $vars;
+    }
 
     private static function getContenteView($view)
     {
@@ -16,6 +21,8 @@ class View
     public static function  render($view, $vars = [])
     {
         $contentView = self::getContenteView($view);
+
+        $vars = array_merge(self::$vars, $vars);
 
         $keys = array_keys($vars);
         $keys = array_map(function ($item) {

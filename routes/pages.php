@@ -9,7 +9,13 @@ $obRouter->get('/', [
     }
 ]);
 
-$obRouter->get('/sobre', [
+$obRouter->get('/sobre', [ 
+    function () {
+        return new Response(200, Pages\About::getHome());
+    }
+]);
+
+$obRouter->get('/pagina/10', [
     function () {
         return new Response(200, Pages\About::getHome());
     }
