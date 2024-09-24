@@ -13,9 +13,7 @@ class Home extends Page
 
         $content = View::render('pages/home', [
             'name' => $obOrganization->name,
-            'description' => $obOrganization->description,
-            'site' => $obOrganization->site
         ]);
-        return parent::getPage('Zoritto - Canal - HOME', $content);
+        return parent::getPage('HOME > ZORITTO', $content);
     }
 }
